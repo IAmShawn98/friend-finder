@@ -6,12 +6,14 @@ const path = require("path");
 const app = express();
 
 // Set the port of our application
-// process.env.PORT lets the port be set by Heroku
-var PORT = process.env.PORT || 8080;
+// process.env.PORT lets the port be 
+// set by Heroku.
+const PORT = process.env.PORT || 8080;
 
+app.use(express.static("app/public"));
 
-
-
+require("./app/routing/apiRoutes.js")(app);
+require("./app/routing/htmlRoutes")(app);
 
 // Start Server.
 app.listen(PORT, function () {
