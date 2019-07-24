@@ -1,5 +1,5 @@
 // Node Packages.
-const friends = ("../data/friends.js");
+const friends = require("../data/friends.js");
 
 module.exports = function (app) {
     app.get("/api/friends", function (req, res) {
