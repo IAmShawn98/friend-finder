@@ -174,7 +174,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <!-- Site Survey Submit Form Button -->
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                        <button type="submit" id="submit" class="btn btn-primary btn-lg btn-block">
                             <i class="fa fa-check-circle"></i> Submit
                         </button>
                     </div>
@@ -201,6 +201,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <!-- Form Script -->
+    <script type="text/javascript">
+    $("#submit").on("click", function() {
+        alert("This will be for form data capture and validation later on.");
+    });
+    </script>
 </body>
 
 </html>
