@@ -1,6 +1,7 @@
 // Node Packages.
 const express = require("express");
 const path = require("path");
+const bodyParser = require("body-parser");
 
 // Define new express app instance.
 const app = express();
@@ -9,6 +10,11 @@ const app = express();
 // process.env.PORT lets the port be 
 // set by Heroku.
 const PORT = process.env.PORT || 8080;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(express.static("app/public"));
 

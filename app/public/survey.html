@@ -43,7 +43,7 @@
                 <h3><strong>Question 1:</strong></h3>
                 <p class="lead">Your mind is always buzzing with unexplored ideas and plans.</p>
                 <!-- Site Survey Dropdown Options -->
-                <select id='q1' style='width: 200px;'>
+                <select id='q1' class="dropdown-item-select" style='width: 200px;'>
                     <option value='0'>1 (Strongly Disagree)</option>
                     <option value='1'>2</option>
                     <option value='2'>3</option>
@@ -56,7 +56,7 @@
                 <h3><strong>Question 2:</strong></h3>
                 <p class="lead">Generally speaking, you rely more on your experience than your imagination.</p>
                 <!-- Site Survey Dropdown Options -->
-                <select id='q2' style='width: 200px;'>
+                <select id='q2' class="dropdown-item-select" style='width: 200px;'>
                     <option value='0'>1 (Strongly Disagree)</option>
                     <option value='1'>2</option>
                     <option value='2'>3</option>
@@ -69,7 +69,7 @@
                 <h3><strong>Question 3:</strong></h3>
                 <p class="lead">You find it easy to stay relaxed and focused even when there is some pressure.</p>
                 <!-- Site Survey Dropdown Options -->
-                <select id='q3' style='width: 200px;'>
+                <select id='q3' class="dropdown-item-select" style='width: 200px;'>
                     <option value='0'>1 (Strongly Disagree)</option>
                     <option value='1'>2</option>
                     <option value='2'>3</option>
@@ -82,7 +82,7 @@
                 <h3><strong>Question 4:</strong></h3>
                 <p class="lead">You rarely do something just out of sheer curiosity.</p>
                 <!-- Site Survey Dropdown Options -->
-                <select id='q4' style='width: 200px;'>
+                <select id='q4' class="dropdown-item-select" style='width: 200px;'>
                     <option value='0'>1 (Strongly Disagree)</option>
                     <option value='1'>2</option>
                     <option value='2'>3</option>
@@ -95,7 +95,7 @@
                 <h3><strong>Question 5:</strong></h3>
                 <p class="lead">People can rarely upset you.</p>
                 <!-- Site Survey Dropdown Options -->
-                <select id='q5' style='width: 200px;'>
+                <select id='q5' class="dropdown-item-select" style='width: 200px;'>
                     <option value='0'>1 (Strongly Disagree)</option>
                     <option value='1'>2</option>
                     <option value='2'>3</option>
@@ -108,7 +108,7 @@
                 <h3><strong>Question 6:</strong></h3>
                 <p class="lead">Your mind is always buzzing with unexplored ideas and plans.</p>
                 <!-- Site Survey Dropdown Options -->
-                <select id='q6' style='width: 200px;'>
+                <select id='q6' class="dropdown-item-select" style='width: 200px;'>
                     <option value='0'>1 (Strongly Disagree)</option>
                     <option value='1'>2</option>
                     <option value='2'>3</option>
@@ -121,7 +121,7 @@
                 <h3><strong>Question 7:</strong></h3>
                 <p class="lead">It is often difficult for you to relate to other people’s feelings.</p>
                 <!-- Site Survey Dropdown Options -->
-                <select id='q7' style='width: 200px;'>
+                <select id='q7' class="dropdown-item-select" style='width: 200px;'>
                     <option value='0'>1 (Strongly Disagree)</option>
                     <option value='1'>2</option>
                     <option value='2'>3</option>
@@ -134,7 +134,7 @@
                 <h3><strong>Question 8:</strong></h3>
                 <p class="lead">In a discussion, truth should be more important than people’s sensitivities.</p>
                 <!-- Site Survey Dropdown Options -->
-                <select id='q8' style='width: 200px;'>
+                <select id='q8' class="dropdown-item-select" style='width: 200px;'>
                     <option value='0'>1 (Strongly Disagree)</option>
                     <option value='1'>2</option>
                     <option value='2'>3</option>
@@ -147,7 +147,7 @@
                 <h3><strong>Question 9:</strong></h3>
                 <p class="lead">You rarely get carried away by fantasies and ideas.</p>
                 <!-- Site Survey Dropdown Options -->
-                <select id='q9' style='width: 200px;'>
+                <select id='q9' class="dropdown-item-select" style='width: 200px;'>
                     <option value='0'>1 (Strongly Disagree)</option>
                     <option value='1'>2</option>
                     <option value='2'>3</option>
@@ -161,7 +161,7 @@
                 <p class="lead">You think that everyone’s views should be respected regardless of whether they are
                     supported by facts or not.</p>
                 <!-- Site Survey Dropdown Options -->
-                <select id='q10' style='width: 200px;'>
+                <select id='q10' class="dropdown-item-select" style='width: 200px;'>
                     <option value='0'>1 (Strongly Disagree)</option>
                     <option value='1'>2</option>
                     <option value='2'>3</option>
@@ -187,27 +187,115 @@
         <a href="https://github.com/IAmShawn98/friend-finder/commits/master"> GitHub Repo</a>
     </div>
 
+    <!-- Modal -->
+    <div id="results-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
 
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title"><strong>Best Match</strong></h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="pName"></h2>
+                    <img id="pImage"
+                        src="https://avatars1.githubusercontent.com/u/41241046?s=400&u=a5209c78a42661a1643fd7c0759469fafb9d9daf&v=4"
+                        alt="matchImg">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+            <!-- jQuery -->
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <!-- Popper JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+            <!-- Bootstrap JS -->
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
 
-    <!-- Form Script -->
-    <script type="text/javascript">
-    $("#submit").on("click", function() {
-        alert("This will be for form data capture and validation later on.")
-    });
-    </script>
+            <!-- Form Script -->
+            <script type="text/javascript">
+                // When the user submits data, handle it.
+                $("#submit").on("click", function () {
+                    // Prevent Page From Reloading.
+                    event.preventDefault();
+                    console.log("Submit Caught, validating....")
+                    // Validate Form Data Functionality.
+                    function validateForm() {
+                        console.log("Validation Processing....")
+                        // Create and set our 'isValid' flag var to true.
+                        var isValid = true;
+                        // If each '.form-control' is empty, consider it invalid. 
+                        $(".form-control").each(function () {
+                            // Update flag to invalid.
+                            console.log("invalid!");
+                            $(".chosen-select").each(function () {
+                                if ($(this).val() === "") {
+                                    isValid = false;
+                                }
+                            });
+                            return isValid;
+                        });
+                        // If each 'dropdown-item-select' (Our Dropdown Classes) is empty, consider it invalid.
+                        $(".dropdown-item-select").each(function () {
+                            // Update flag to invalid.
+                            console.log("Invalid!");
+                            $(".chosen-select").each(function () {
+                                if ($(this).val() === "") {
+                                    isValid = false;
+                                }
+                            });
+                        });
+                    }
+                    // If the form is valid, submit form successfully.
+                    if (validateForm()) {
+                        console.log("Data Validated, processing....")
+                        var userData = {
+                            name: $("#fName"),
+                            photo: $("fLinkPhoto"),
+                            scores: [
+                                $("#q1").val(),
+                                $("#q2").val(),
+                                $("#q3").val(),
+                                $("#q4").val(),
+                                $("#q5").val(),
+                                $("#q6").val(),
+                                $("#q7").val(),
+                                $("#q8").val(),
+                                $("#q9").val(),
+                                $("#q10").val()
+                            ]
+                        };
+                        // Store our Browsers current URL.
+                        var thisURL = window.location.origin;
+                        console.log(thisURL);
+
+                        // AJAX post the data to the friends API.
+                        $.post("/api/friends", userData, function (data) {
+
+                            // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                            $("#match-name").text(data.name);
+                            $("#match-img").attr("src", data.photo);
+
+                            // Show the modal with the best match
+                            $("#results-modal").modal("toggle");
+
+                        });
+                    } else {
+                        alert("Please fill out all fields before submitting!");
+                    }
+
+                    // Return Validation Flag.
+                    return false;
+
+                });
+            </script>
 </body>
 
 </html>
