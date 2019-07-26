@@ -22,10 +22,9 @@
     <div class="container">
         <!-- Site Survey Header & Content Seperator -->
         <h1 class="display-4">Survey Questions</h1>
-        <hr>
+        <hr />
         <h3>About You</h3>
         <!-- Site Survey (SUBMIT FORM) -->
-        <form>
             <!-- Site Survey Form Group (Name 'Required Field') -->
             <div class="form-group">
                 <label for="fName">Name (Required)</label>
@@ -36,7 +35,7 @@
                 <label for="fLinkPhoto">Link to Photo Image (Required)</label>
                 <input type="text" class="form-control" id="fLinkPhoto">
             </div>
-            <hr>
+            <hr />
             <!-- Site Survey Questions -->
             <div class="container-fluid p-4">
                 <!-- Site Survey Question 1 -->
@@ -180,8 +179,7 @@
                     </div>
                 </div>
             </div>
-        </form>
-        <hr>
+        <hr />
         <!-- Site Footer Links With Anchor Sperator -->
         <a href="/api/friends">API Friends List</a> |
         <a href="https://github.com/IAmShawn98/friend-finder/commits/master"> GitHub Repo</a>
@@ -225,17 +223,14 @@
                 $("#submit").on("click", function () {
                     // Prevent Page From Reloading.
                     event.preventDefault();
-                    console.log("Submit Caught, validating....")
                     // Validate Form Data Functionality.
                     function validateForm() {
-                        console.log("Validation Processing....")
                         // Create and set our 'isValid' flag var to true.
                         var isValid = true;
                         // If each '.form-control' is empty, consider it invalid. 
                         $(".form-control").each(function () {
                             // Update flag to invalid.
-                            console.log("invalid!");
-                            $(".chosen-select").each(function () {
+                            $(".dropdown-item-select").each(function () {
                                 if ($(this).val() === "") {
                                     isValid = false;
                                 }
@@ -243,10 +238,9 @@
                             return isValid;
                         });
                         // If each 'dropdown-item-select' (Our Dropdown Classes) is empty, consider it invalid.
-                        $(".dropdown-item-select").each(function () {
+                        $(".form-control").each(function () {
                             // Update flag to invalid.
-                            console.log("Invalid!");
-                            $(".chosen-select").each(function () {
+                            $(".dropdown-item-select").each(function () {
                                 if ($(this).val() === "") {
                                     isValid = false;
                                 }
@@ -255,7 +249,6 @@
                     }
                     // If the form is valid, submit form successfully.
                     if (validateForm()) {
-                        console.log("Data Validated, processing....")
                         var userData = {
                             name: $("#fName"),
                             photo: $("fLinkPhoto"),
@@ -274,14 +267,13 @@
                         };
                         // Store our Browsers current URL.
                         var thisURL = window.location.origin;
-                        console.log(thisURL);
 
                         // AJAX post the data to the friends API.
                         $.post("/api/friends", userData, function (data) {
 
                             // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                            $("#match-name").text(data.name);
-                            $("#match-img").attr("src", data.photo);
+                            $("#pName").text(data.name);
+                            $("#pImage").attr("src", data.photo);
 
                             // Show the modal with the best match
                             $("#results-modal").modal("toggle");
@@ -290,9 +282,6 @@
                     } else {
                         alert("Please fill out all fields before submitting!");
                     }
-
-                    // Return Validation Flag.
-                    return false;
 
                 });
             </script>
