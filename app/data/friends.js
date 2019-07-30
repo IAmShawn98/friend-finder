@@ -35,15 +35,15 @@ var friends = [
         name: "Jeff Goldblum",
         photo: "https://pixel.nymag.com/imgs/fashion/daily/2019/05/28/28-jeff-goldblum.w700.h700.jpg",
         scores: [
-            5,
-            1,
-            4,
-            4,
             1,
             1,
+            3,
             2,
+            1,
+            3,
             5,
-            4,
+            5,
+            5,
             1
         ]
     },
